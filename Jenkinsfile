@@ -1,18 +1,18 @@
 pipeline {
     agent any
     tools {
-        nodejs 'NodeJS'  // This assumes you have a NodeJS tool configured in Jenkins
+        nodeJS 'NodeJS' // Corrected to nodeJS
     }
     stages {
-        stage('Github') {
+        stage("Github") {
             steps {
                 git branch: 'main', credentialsId: 'Victorwasonga-cicd', url: 'https://github.com/Victorwasonga/Simple_NodeJS_App.git'
             }
         }
-        stage('Unit Test') {
+        stage("unit test") {
             steps {
-                sh 'npm install'
                 sh 'npm test'
+                sh 'npm install'
             }
         }
     }
