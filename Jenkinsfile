@@ -1,4 +1,4 @@
-piline {
+pipeline {
     agent any
     stages{
         stage("Github"){
